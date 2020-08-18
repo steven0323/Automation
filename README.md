@@ -1,4 +1,4 @@
-# Automation_-
+# Automation
 # 無效商品偵測
 1. 須先下載 google chrome driver - version 83.0
 2. 開通google gmail api 存取權限, google sheet api
