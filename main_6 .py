@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+'''
+    匯入所有需要的套件
 
+'''
 import requests
 import os,sys
 from bs4 import BeautifulSoup
@@ -39,10 +42,15 @@ headers = {'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWe
 options = Options()
 options.add_argument("user-data-dir={0}")
 SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
-KEY_FILE_LOCATION = './client_secrets 2.json' 
+
+# 輸入對應 client secret key file 位置
+KEY_FILE_LOCATION = '' 
+# 該 google analytics view id
 VIEW_ID = '160738988'
 sd = date.today() - timedelta(days=1)
 sd=sd.strftime('%Y-%m-%d')
+
+# LINE Notify 權杖
 token = "KROeVpJKpfbcEQTa883Ep2G4w8jyDfB5ks5SnK6BhHM"
 
 def initialize_analyticsreporting():
@@ -143,11 +151,14 @@ def ga():
 
 def send_csv(attachment):
     
-    emailfrom = "Steph199603@gmail.com"
+    # your gmail
+    emailfrom = ""
     emailto = "linetvltw@gmail.com"
     fileToSend = attachment
-    username = "Steph199603@gmail.com"
-    password = "yuhsuan0323"
+
+    # your gmail account and gmail password
+    username = ""
+    password = ""
 
     msg = MIMEMultipart()
     msg["From"] = emailfrom
@@ -185,13 +196,15 @@ def send_csv(attachment):
     
 def send_mail(content):
     
-    gmail_user = "Steph199603@gmail.com"
-    gmail_pwd = "yuhsuan0323"
+    # your gmail account and password
+
+    gmail_user = ""
+    gmail_pwd = ""
     
     msg = MIMEText(content)
     msg['Subject'] = '20200211 report'
     msg['From'] = gmail_user
-    msg['To'] = 'Steph199603@gmail.com'
+    msg['To'] = ''
     
     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
     server.ehlo()
@@ -787,7 +800,7 @@ def main():
 if __name__== "__main__":
     
     count = 0
-    time.sleep(5400)
+    
     while True:
         x = datetime.datetime.now() 
         m = x.strftime("%m")
@@ -795,6 +808,11 @@ if __name__== "__main__":
         hr = x.strftime("%H")
         mini = x.strftime("%M")
        
+
+
+       '''
+            自行設定要run code 的時間，以可以用 python scheduler 進行排程
+       '''
         if hr == "00" and mini =="01":
             
             try:

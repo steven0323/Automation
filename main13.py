@@ -47,10 +47,14 @@ headers = {'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWe
 options = Options()
 options.add_argument("user-data-dir={0}")
 SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
-KEY_FILE_LOCATION = './client_secrets 2.json' 
+
+# client secret file 位置
+KEY_FILE_LOCATION = '' 
+# google analytics view id 
 VIEW_ID = '160738988'
 sd = date.today() - timedelta(days=1)
 sd=sd.strftime('%Y-%m-%d')
+# LINE Notify token
 token = "KROeVpJKpfbcEQTa883Ep2G4w8jyDfB5ks5SnK6BhHM"
 
 def initialize_analyticsreporting():
@@ -153,11 +157,11 @@ def ga():
 
 def send_csv(attachment):
     
-    emailfrom = "Steph199603@gmail.com"
+    emailfrom = ""
     emailto = "linetvltw@gmail.com"
     fileToSend = attachment
-    username = "Steph199603@gmail.com"
-    password = "yuhsuan0323"
+    username = ""
+    password = ""
 
     msg = MIMEMultipart()
     msg["From"] = emailfrom
@@ -195,8 +199,8 @@ def send_csv(attachment):
     
 def send_mail(content):
     
-    gmail_user = "Steph199603@gmail.com"
-    gmail_pwd = "yuhsuan0323"
+    gmail_user = ""
+    gmail_pwd = ""
     
     msg = MIMEText(content)
     msg['Subject'] = '20200211 report'
@@ -794,7 +798,7 @@ def main(df):
     
 if __name__== "__main__":
 
-    time.sleep(19800)
+    
     count=0
     while True:
         
@@ -807,7 +811,7 @@ if __name__== "__main__":
         
         
         
-        if hr == "04" and mini =="00":
+        if hr == "" and mini =="":
             try:
                 
                 
