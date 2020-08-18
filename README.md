@@ -1,5 +1,5 @@
 # Automation_-
-無效商品偵測
+# 無效商品偵測
 1. 須先下載 google chrome driver - version 83.0
 2. 開通google gmail api 存取權限, google sheet api
 3. 下載 google analytics client secret key - json file
